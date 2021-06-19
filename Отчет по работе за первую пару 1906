@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _19061
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+                Person person = new Person("Андрей", "Ливенцев", 18);
+                person.Display();
+                Console.WriteLine();
+                Student student = new Student("Андрей", "Ливенцев", 18, "КС№54", "1ИСП11-17");
+                student.Display();
+                Console.ReadKey();
+        }
+    }
+        class Person
+        {
+            public string Имя { get; set; }
+            public string Фамилия { get; set; }
+            public int Возраст { get; set; }
+            public void Display()
+
+            {
+                Console.WriteLine("Имя:" + Имя);
+                Console.WriteLine("Фамилия:" + Фамилия);
+                Console.WriteLine("Возраст:" + Возраст);
+            }
+
+            public Person(string name, string surname, int age)
+
+            {
+                Имя = name;
+                Фамилия = surname;
+                Возраст = age;
+            }
+
+            public Person()
+
+            {
+
+            }
+
+        }
+        class Student : Person
+
+        {
+            public string Учреждение { get; set; }
+            public string Группа { get; set; }
+
+            public Student(string name, string surname, int age, string institution, string group):
+            base(name, surname, age)
+            {
+                Учреждение = institution;
+                Группа = group;
+            }
+            public new void Display()
+
+            {
+                Console.WriteLine("Имя:" + Имя);
+                Console.WriteLine("Фамилия:" + Фамилия);
+                Console.WriteLine("Возраст:" + Возраст);
+                Console.WriteLine("Группа:" + Группа);
+                Console.WriteLine("Учреждение:" + Учреждение);
+            }
+        }
+}
